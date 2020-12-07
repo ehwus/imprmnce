@@ -3,6 +3,11 @@ const it = (description, assertion) => {
     assertion();
 }
 
+const describe = (thingBeingDescribed, assertion) => {
+    console.log(thingBeingDescribed);
+    assertion();
+}
+
 const isEqual = (a, b) => {
     if (a === b) {
         console.log("I'm pleased to report that everything went swimmingly")
