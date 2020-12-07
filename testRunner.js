@@ -15,6 +15,7 @@ const isEqual = (a, b) => {
         return true;
     } else {
         console.log("FAIL")
+        console.log(a + " != " + b)
         console.error("I am sorry for your loss");
         return false;
     }
