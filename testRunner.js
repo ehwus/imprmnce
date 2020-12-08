@@ -20,3 +20,15 @@ const isEqual = (a, b) => {
         return false;
     }
 }
+
+const throwsError = (assertion) => {
+    try {
+        assertion();
+    }
+    catch(err) {
+        console.log("EXPECTED ERROR HAPPENED")
+        console.log(err)
+        return true;
+    }
+    console.error("DID NOT ENCOUNTER EXPECTED ERROR")
+}
