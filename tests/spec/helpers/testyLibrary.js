@@ -1,4 +1,6 @@
 const testBody = document.getElementById('tests');
+let results = []
+
 
 const makeTitle = (title) => {
     testBody.innerHTML += `<h2 class="mt-5">${title}</h2>`
@@ -10,8 +12,10 @@ const makeSubTitle = (subtitle) => {
 
 const addResult = (boolean) => {
     if (boolean) {
+        results.push(true)
         testBody.innerHTML += '<p style="color: green;">PASS</p>'
     } else {
+        results.push(false)
         testBody.innerHTML += '<p style="color: red;">FAIL</p>'
     }
 }
