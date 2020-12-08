@@ -1,11 +1,11 @@
 const testBody = document.getElementById('tests');
 
 const makeTitle = (title) => {
-    testBody.innerHTML += `<h1>${title}</h1>`
+    testBody.innerHTML += `<h2 class="mt-5">${title}</h2>`
 }
 
 const makeSubTitle = (subtitle) => {
-    testBody.innerHTML += `<h2>${subtitle}</h2>`
+    testBody.innerHTML += `<h3>${subtitle}</h3>`
 }
 
 const addResult = (boolean) => {
@@ -15,7 +15,6 @@ const addResult = (boolean) => {
         testBody.innerHTML += '<p style="color: red;">FAIL</p>'
     }
 }
-
 
 const it = (description, assertion) => {
     makeSubTitle("Test name: " + description);
