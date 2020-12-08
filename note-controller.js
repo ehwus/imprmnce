@@ -1,8 +1,9 @@
-let noteList = new NoteList
-noteList.addNote("Hello World")
-noteList.addNote("Test part two")
-let listOfNotes = new noteListView(noteList)
+class NoteController {
+    constructor(noteList) {
+        this.noteList = noteList;
+    }
 
-const app = document.getElementById('app');
-app.innerHTML = listOfNotes.getHTML();
-
+    insertHTML(element) {
+        element.innerHTML += this.noteList.getHTML();
+    }
+}
