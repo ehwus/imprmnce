@@ -41,6 +41,7 @@ const isEqual = (a, b) => {
 }
 
 const isSameType = (a, b) => {
+    addResult(typeof(a) === typeof(b));
     return typeof(a) === typeof(b);
 }
 
