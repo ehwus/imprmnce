@@ -40,6 +40,10 @@ const isEqual = (a, b) => {
     }
 }
 
+const isSameType = (a, b) => {
+    return typeof(a) === typeof(b);
+}
+
 const throwsError = (assertion) => {
     try {
         assertion();
