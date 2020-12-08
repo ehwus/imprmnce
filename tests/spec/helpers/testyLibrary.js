@@ -1,0 +1,53 @@
+const testBody = document.getElementById('tests');
+let results = []
+
+
+const makeTitle = (title) => {
+    testBody.innerHTML += `<h2 class="mt-5 text-primary">${title}</h2>`
+}
+
+const makeSubTitle = (subtitle) => {
+    testBody.innerHTML += `<h3 class="text-secondary">${subtitle}</h3>`
+}
+
+const addResult = (boolean) => {
+    if (boolean) {
+        results.push(true)
+        testBody.innerHTML += '<p class="text-success">PASS</p>'
+    } else {
+        results.push(false)
+        testBody.innerHTML += '<p class="text-danger">FAIL</p>'
+    }
+}
+
+const it = (description, assertion) => {
+    makeSubTitle("Test name: " + description);
+    assertion();
+}
+
+const describe = (thingBeingDescribed, assertion) => {
+    makeTitle(thingBeingDescribed);
+    assertion();
+}
+
+const isEqual = (a, b) => {
+    if (a === b) {
+        addResult(true)
+        return true;
+    } else {
+        addResult(false)
+        return false;
+    }
+}
+
+const throwsError = (assertion) => {
+    try {
+        assertion();
+    }
+    catch(err) {
+        addResult(true)
+        console.log(err)
+        return true;
+    }
+    addResult(false)
+}
