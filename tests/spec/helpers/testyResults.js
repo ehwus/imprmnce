@@ -8,4 +8,12 @@ for (let result of results) {
 let totalTests = passCount + failCount;
 
 testBody.innerHTML += "<hr>";
-testBody.innerHTML += `<h3>${passCount}/${totalTests} tests passed.</h3`
+
+let textColor;
+if (passCount === totalTests){
+    textColor = "text-success";
+} else {
+    textColor = "text-danger";
+}
+
+testBody.innerHTML += `<h3 class="${textColor}">${passCount}/${totalTests} tests passed.</h3`

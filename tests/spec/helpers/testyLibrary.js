@@ -3,20 +3,20 @@ let results = []
 
 
 const makeTitle = (title) => {
-    testBody.innerHTML += `<h2 class="mt-5">${title}</h2>`
+    testBody.innerHTML += `<h2 class="mt-5 text-primary">${title}</h2>`
 }
 
 const makeSubTitle = (subtitle) => {
-    testBody.innerHTML += `<h3>${subtitle}</h3>`
+    testBody.innerHTML += `<h3 class="text-secondary">${subtitle}</h3>`
 }
 
 const addResult = (boolean) => {
     if (boolean) {
         results.push(true)
-        testBody.innerHTML += '<p style="color: green;">PASS</p>'
+        testBody.innerHTML += '<p class="text-success">PASS</p>'
     } else {
         results.push(false)
-        testBody.innerHTML += '<p style="color: red;">FAIL</p>'
+        testBody.innerHTML += '<p class="text-danger">FAIL</p>'
     }
 }
 
