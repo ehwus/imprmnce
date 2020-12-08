@@ -1,7 +1,7 @@
 describe("NoteList", () => {
     it("initialises with an empty array", () => {
         let listy = new NoteList;
-        isEqual(listy.notes.length, 0);
+        isSameType(listy.notes, []);
     });
 
     describe("addNote()", () => {
