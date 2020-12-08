@@ -7,7 +7,7 @@ const makeTitle = (title) => {
 }
 
 const makeSubTitle = (subtitle) => {
-    testBody.innerHTML += `<h3 class="text-secondary">${subtitle}</h3>`
+    testBody.innerHTML += `<h5 class="text-secondary">${subtitle}</h5>`
 }
 
 const addResult = (boolean) => {
