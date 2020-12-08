@@ -22,7 +22,13 @@ const addResult = (boolean) => {
 
 const it = (description, assertion) => {
     makeSubTitle(description);
-    assertion();
+    try {
+        assertion();
+    }
+    catch(err) {
+        addResult(false)
+        console.error(err)
+    }    
 }
 
 const describe = (thingBeingDescribed, assertion) => {
