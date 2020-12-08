@@ -21,7 +21,7 @@ const addResult = (boolean) => {
 }
 
 const it = (description, assertion) => {
-    makeSubTitle("Test name: " + description);
+    makeSubTitle(description);
     assertion();
 }
 
