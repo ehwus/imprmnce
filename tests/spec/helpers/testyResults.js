@@ -1,19 +1,23 @@
-let passCount = 0;
-let failCount = 0;
+const printResults = () => {
+  let passCount = 0;
+  let failCount = 0;
 
-for (let result of results) {
+  for (let result of results) {
     result ? passCount++ : failCount++;
-}
+  }
 
-let totalTests = passCount + failCount;
+  let totalTests = passCount + failCount;
 
-testBody.innerHTML += "<hr>";
+  testBody.innerHTML += "<hr>";
 
-let textColor;
-if (passCount === totalTests){
+  let textColor;
+  if (passCount === totalTests) {
     textColor = "text-success";
-} else {
+  } else {
     textColor = "text-danger";
-}
+  }
 
-testBody.innerHTML += `<h3 class="${textColor}">${passCount}/${totalTests} tests passed.</h3`
+  testBody.innerHTML += `<h3 class="${textColor}">${passCount}/${totalTests} tests passed.</h3`;
+};
+
+printResults();
