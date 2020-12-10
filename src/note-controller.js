@@ -27,13 +27,6 @@ class NoteController {
   }
 };
 
-const addNoteFromInput = () => {
-    let note = document.getElementById('new-note').value;
-    list.addNote(note);
-    document.getElementById('new-note').value = '';
-    controller.insertListHTML();
-}
-
 let list = new NoteList;
 let listView = new noteListView(list);
 let controller = new NoteController(listView);
