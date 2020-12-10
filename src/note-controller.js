@@ -5,7 +5,7 @@ class NoteController {
   }
 
   insertListHTML(element = document.getElementById("app")) {
-    element.innerHTML += this.noteListView.getHTML();
+    element.innerHTML = this.noteListView.getHTML();
   }
 
   insertNoteHTML(noteID, element = document.getElementById("app")) {
@@ -13,13 +13,20 @@ class NoteController {
       if (noteID === note.id) {
         let view = new this.singleViewClass(note);
         element.innerHTML = view.getHTML();
-        element.innerHTML += '<a href="/">Back</a>'
+        element.innerHTML += '<a href="#">Back</a>'
         return;
       };
     };
     throw new Error("Note not found");
   };
 };
+
+const addNoteFromInput = () => {
+    let note = document.getElementById('new-note').value;
+    console.log(note);
+    list.addNote(note);
+    controller.insertListHTML();
+}
 
 let list = new NoteList;
 list.addNote("Hello World");
@@ -32,5 +39,5 @@ controller.insertListHTML();
 
 window.addEventListener('hashchange', (e) => {
     let hash = window.location.hash
-    controller.insertNoteHTML(parseInt(hash.substring(1)))
+    hash ? controller.insertNoteHTML(parseInt(hash.substring(1))) : controller.insertListHTML();
 });
