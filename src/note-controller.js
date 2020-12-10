@@ -19,6 +19,12 @@ class NoteController {
     };
     throw new Error("Note not found");
   };
+
+  addNoteFromInput(note = document.getElementById('new-note')) {
+    list.addNote(note.value);
+    note.value = '';
+    this.insertListHTML();
+  }
 };
 
 const addNoteFromInput = () => {
