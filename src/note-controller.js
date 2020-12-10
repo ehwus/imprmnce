@@ -13,6 +13,7 @@ class NoteController {
       if (noteID === note.id) {
         let view = new this.singleViewClass(note);
         element.innerHTML = view.getHTML();
+        element.innerHTML += '<a href="/">Back</a>'
         return;
       };
     };
@@ -28,6 +29,7 @@ let listView = new noteListView(list);
 let controller = new NoteController(listView);
 
 controller.insertListHTML();
+
 window.addEventListener('hashchange', (e) => {
     let hash = window.location.hash
     controller.insertNoteHTML(parseInt(hash.substring(1)))
