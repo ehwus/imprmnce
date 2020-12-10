@@ -23,15 +23,12 @@ class NoteController {
 
 const addNoteFromInput = () => {
     let note = document.getElementById('new-note').value;
-    console.log(note);
     list.addNote(note);
+    document.getElementById('new-note').value = '';
     controller.insertListHTML();
 }
 
 let list = new NoteList;
-list.addNote("Hello World");
-list.addNote("This is a test");
-
 let listView = new noteListView(list);
 let controller = new NoteController(listView);
 
