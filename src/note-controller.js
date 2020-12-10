@@ -1,9 +1,9 @@
 class NoteController {
-    constructor(noteList) {
-        this.noteList = noteList;
+    constructor(noteListView) {
+        this.noteListView = noteListView;
     }
 
     insertHTML(element) {
-        element.innerHTML += this.noteList.getHTML();
+        element.innerHTML += this.noteListView.getHTML();
     }
 }

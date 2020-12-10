@@ -3,7 +3,7 @@ describe("NoteController", () => {
         let fakeNoteListView = { }
         let fakeElement;
         let controller = new NoteController(fakeNoteListView, fakeElement);
-        isSameType(controller.noteList, fakeNoteListView)
+        isSameType(controller.noteListView, fakeNoteListView)
     });
 
     it("inserts HTML into given element", () => {
