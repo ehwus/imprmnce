@@ -26,3 +26,9 @@ list.addNote("This is a test");
 
 let listView = new noteListView(list);
 let controller = new NoteController(listView);
+
+controller.insertListHTML();
+window.addEventListener('hashchange', (e) => {
+    console.log(e)
+    console.log('hash has been changed')
+});

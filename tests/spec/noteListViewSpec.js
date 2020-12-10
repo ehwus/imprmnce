@@ -24,7 +24,7 @@ describe("NoteListView", () => {
 
   it("should return a link to that note's page", () => {
     let htmlString =
-      `<ul><li><a href="./notes/1">I love notes...</a></li><li><a href="./notes/2">I really hate notes...</a></li></ul>`;
+      `<ul><li><a href="./#1">I love notes...</a></li><li><a href="./#2">I really hate notes...</a></li></ul>`;
     isEqual(notelistview.getHTML(), htmlString);
   });
 
@@ -40,7 +40,7 @@ describe("NoteListView", () => {
       ],
     };
     let brevity =
-      `<ul><li><a href="./notes/1">` +
+      `<ul><li><a href="./#1">` +
       longListy.notes[0].readNote().slice(0, 20) +
       "..." +
       "</a></li></ul>";
