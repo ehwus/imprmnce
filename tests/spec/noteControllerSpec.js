@@ -50,6 +50,6 @@ describe("NoteController", () => {
 
     let controller = new NoteController(fakeNoteListView, fakeSingleView);
     controller.insertNoteHTML(1, fakeElement);
-    isEqual(fakeElement.innerHTML, "<div>Hello World</div><a href="/">Back</a>");
+    isEqual(fakeElement.innerHTML, `<div>Hello World</div><a href="#">Back</a>`);
   });
 });
