@@ -29,6 +29,6 @@ let controller = new NoteController(listView);
 
 controller.insertListHTML();
 window.addEventListener('hashchange', (e) => {
-    console.log(e)
-    console.log('hash has been changed')
+    let hash = window.location.hash
+    controller.insertNoteHTML(parseInt(hash.substring(1)))
 });
